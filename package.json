@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "name": "endir",
+  "author": "Cat Pea <corporate.miou@gmail.com> (https://catpea.com/)",
+  "version": "1.0.0",
+  "description": "Command line utility to virtually place all HTML files in a sub directory by prefixing all the absolute paths specified in a, link, img, and script with a user specified prefix.",
+  "main": "index.js",
+  "bin": {
+    "endir": "./index.js"
+  },
+  "scripts": {
+    "save": "git add .; git commit -m 'New Release'; git push; npm version patch; npm publish; git push;",
+    "test": "./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catpea/endir.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catpea/endir/issues"
+  },
+  "homepage": "https://github.com/catpea/endir#readme",
+  "dependencies": {
+    "cheerio": "*",
+    "commander": "^7.2.0",
+    "tiny-glob": "^0.2.9"
+  }
+}
