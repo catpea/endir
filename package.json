@@ -2,7 +2,7 @@
   "type": "module",
   "name": "endir",
   "author": "Cat Pea <corporate.miou@gmail.com> (https://catpea.com/)",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Command line utility to virtually place all HTML files in a sub directory by prefixing all the absolute paths specified in a, link, img, and script with a user specified prefix.",
   "main": "index.js",
   "bin": {
