@@ -58,7 +58,9 @@ Options:
 ```
 
 ```html
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+  <head>
     <meta charset="utf-8">
     <title>My test page</title>
     <link rel="icon" type="image/png" href="/repository-name/favicon.ico">
@@ -68,7 +70,6 @@ Options:
     <img alt="My test image" src="/repository-name/images/firefox-icon.png">
     <img alt="My test image" src="boop.png">
     <script src="/repository-name/js/bootstrap.bundle.min.js"></script>
-
-
-</body></html>
+  </body>
+</html>
 ```
