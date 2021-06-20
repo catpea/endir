@@ -6,29 +6,24 @@ import glob from 'tiny-glob';
 
 export default main;
 
-async function main({prefix, pattern, cwd, dry, verbose, report}){
+async function main({prefix, pattern, cwd, dry, verbose, report, entries}){
   cwd = path.resolve(cwd);
 
   if(dry&&verbose) console.log('DRY RUN')
-
+  const targets = Object.fromEntries(entries.split(',').map(string=>string.trim()).map(string=>string.split(':').map(string=>string.trim())));
+  if(verbose) console.log(targets);
+  
   const files = await glob(pattern, {cwd, absolute:true});
   if(verbose) console.log(`Found ${files.length} matching ${cwd}: ${pattern}.`)
 
   for (const file of files) {
-    await patch({file, prefix, cwd, dry, verbose, report})
+    await patch({file, prefix, cwd, dry, verbose, report, targets})
   }
 }
 
-async function patch({file, prefix, cwd, dry, verbose, report}){
+async function patch({file, prefix, cwd, dry, verbose, report, targets}){
   const html = (await readFile(file)).toString();
   const $ = cheerio.load(html);
-
-  const targets = {
-    a: 'href',
-    link: 'href',
-    img: 'src',
-    script: 'src',
-  };
 
   for(const [selector, attribute] of Object.entries(targets)){
     $(selector).each(function (i, elem) {

@@ -12,6 +12,7 @@ program
   .option('-d, --dry', 'Dryrun, explain changes, but do not write them to disk.')
   .option('-l, --list', 'Prints a verbose JSON report of all changes.')
 
+  .option('-e, --entries <list>', 'Tags attribute pairs to prefix', 'a:href,link:href,img:src,script:src')
   .option('-r, --root <directory>', 'Root directory of where to begin operations.')
   .option('-g, --glob <pattern>', 'glob pattern', '**/*.{html}')
   .option('-p, --prefix <path>', 'directory prefix');
@@ -25,7 +26,8 @@ const dry = options.dry;
 const cwd = options.root;
 const pattern = options.glob;
 const prefix = options.prefix;
+const entries = options.entries;
 
-await application({ dry, verbose, prefix, pattern, cwd, report });
+await application({ dry, verbose, prefix, pattern, cwd, report, entries });
 
 if(options.list) console.log(report);

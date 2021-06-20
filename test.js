@@ -8,9 +8,10 @@ const verbose = false;
 const prefix = '/flarp';
 const pattern = `**/*.{html}`;
 const cwd = './test/root';
+const entries = 'a:href,link:href,img:src,script:src';
 
 const report = [];
-await application({ dry, verbose, prefix, pattern, cwd, report });
+await application({ dry, verbose, prefix, pattern, cwd, report, entries });
 
 const actual = report;
 const expected = [
