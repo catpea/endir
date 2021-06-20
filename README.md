@@ -23,7 +23,7 @@ Options:
   -v, --verbose           Be verbose.
   -d, --dry               Dryrun, explain changes, but do not write them to disk.
   -l, --list              Prints a verbose JSON report of all changes.
-  -e, --entries <list>    Tags attribute pairs to prefix (default: "a:href,link:href,img:src,script:src")
+  -e, --entries <list>    Tag:attribute pairs to prefix (default: "a:href,link:href,img:src,script:src")
   -r, --root <directory>  Root directory of where to begin operations.
   -g, --glob <pattern>    glob pattern (default: "**/*.{html}")
   -p, --prefix <path>     directory prefix
